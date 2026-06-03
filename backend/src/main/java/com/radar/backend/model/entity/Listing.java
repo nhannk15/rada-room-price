@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -44,7 +45,7 @@ public class Listing {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "listing")
+    @OneToMany(mappedBy = "listing", cascade = CascadeType.ALL)
     private List<PriceSnapshot> priceSnapShot;
 
     @PrePersist

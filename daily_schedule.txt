@@ -6,6 +6,8 @@ Week 1:
     - Friday: Create Database radar, test query successfully.
 
 Week 2:
+    - Monday: Get Started with Spring MVC.
+    - Tuesday: 
 Week 3:
 Week 4:
 Week 5:

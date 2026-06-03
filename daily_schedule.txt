@@ -1,2 +1,18 @@
-Ngày 1 – Thiết lập môi trường & tạo repo (Thứ 2).
-Ngày 2 – Docker Compose & cấu hình container (Thứ 3).
+Week 1:
+    - Monday: Create GitHub repo radar-room-price.
+    - Tuesday: Write docker-compose.yaml (PostgreSQL + Mock Spring), run the first container.
+    - Wednesday: Create Spring Boot Project Backend with sufficient starter dependencies, run successfully.
+    - Thursday: Initial Frontend React + Vite, npm run dev smoothly.
+    - Friday: Create Database radar, test query successfully.
+
+Week 2:
+Week 3:
+Week 4:
+Week 5:
+Week 6:
+Week 7:
+Week 8:
+Week 9:
+Week 10:
+Week 11:
+Week 12:

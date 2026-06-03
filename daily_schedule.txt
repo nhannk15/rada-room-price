@@ -1,0 +1,2 @@
+Ngày 1 – Thiết lập môi trường & tạo repo (Thứ 2).
+Ngày 2 – Docker Compose & cấu hình container (Thứ 3).

@@ -11,12 +11,13 @@ Week 2:
     - Wednesday: Flyway Migration.
     - Thursday: Spring Boot DevTools.
     - Friday: JUnit 5 & Mockito.
+    
 Week 3:
     - Monday: Basic Jsoup Crawler.
     - Tuesday: HTTP Headers + CrawlerSerivce
-    - Wednesday:
-    - Thursday:
-    - Friday:
+    - Wednesday: Exception Handling + Retry Logic
+    - Thursday: Controller for Crawler
+    - Friday: 
 Week 4:
 Week 5:
 Week 6:

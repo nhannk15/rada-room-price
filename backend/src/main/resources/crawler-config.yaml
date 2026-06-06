@@ -1,0 +1,28 @@
+sites:
+  - name: "phongtro123"
+    baseUrl: "https://phongtro123.com/tinh-thanh/ho-chi-minh"
+    enabled: true
+    selectors:
+      container: "ul.post__listing > li"
+      title: "h3 > a > span"
+      price: "span.text-green.fw-semibold.fs-6"
+      area: "div.mb-2 > span:nth-child(3)"
+      district: "div.mb-2 > a"
+      url: "h3 > a"
+  
+  - name: "tromoi.com"
+    baseUrl: "https://tromoi.com/tim-tro-tai-thanh-pho-ho-chi-minh"
+    enabled: false
+    selectors:
+      containers: "div.row.gap-y-20 > div"
+      title: "div.hostel-item__title > a > h3"
+      price: "div.hostel-item__price--wrap > span"
+      area: ""
+      district: "div.hostel-item__address > p" 
+      url: "div.hostel-item__title > a"
+
+settings:
+  userAgent: "Mozila/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, likeGecko) Chrome/120.0.0.0 Safari/537.36"
+  timeOutMs: 10000
+  retryMax: 3
+  retryDelayMs: 2000

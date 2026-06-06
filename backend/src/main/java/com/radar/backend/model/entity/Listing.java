@@ -53,4 +53,13 @@ public class Listing {
         this.createdAt = LocalDateTime.now();
     }
 
+    public Listing(String url, String title, String district, BigDecimal area) {
+        this.url = url;
+        this.title = title;
+        this.district = district;
+        this.area = area;
+    }
+
+    
+
 }

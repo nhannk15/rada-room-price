@@ -48,7 +48,7 @@ public class CrawlerService {
         return null;
     }
 
-    public void parseListing(
+    public int parseListing(
             Document document,
             String containerSelector,
             String titleSelector,
@@ -58,7 +58,7 @@ public class CrawlerService {
             String urlSelector) {
         if (document == null) {
             log.warn("DOCUMENT IS NULL, SKIP PARSING");
-            return;
+            return 0;
         }
 
         Elements items = document.select(containerSelector);
@@ -89,7 +89,7 @@ public class CrawlerService {
         }
 
         log.info("SUCCESSULLY PARSE {} VALID LISTINGS", count);
-
+        return count;
     }
 
     public String extractText(Element parent, String selector) {
@@ -99,7 +99,7 @@ public class CrawlerService {
 
     public String extractAttribute(Element parent, String selector, String attr) {
         Element element = parent.selectFirst(selector);
-        return element != null ? element.attr(attr) : "N/A";
+        return element != null ? element.attr("abs:" + attr) : "N/A";
     }
 
 }

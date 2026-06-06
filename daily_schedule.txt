@@ -7,8 +7,16 @@ Week 1:
 
 Week 2:
     - Monday: Get Started with Spring MVC.
-    - Tuesday: 
+    - Tuesday: Spring Data JPA.
+    - Wednesday: Flyway Migration.
+    - Thursday: Spring Boot DevTools.
+    - Friday: JUnit 5 & Mockito.
 Week 3:
+    - Monday:
+    - Tuesday:
+    - Wednesday:
+    - Thursday:
+    - Friday:
 Week 4:
 Week 5:
 Week 6:

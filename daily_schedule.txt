@@ -12,8 +12,8 @@ Week 2:
     - Thursday: Spring Boot DevTools.
     - Friday: JUnit 5 & Mockito.
 Week 3:
-    - Monday:
-    - Tuesday:
+    - Monday: Basic Jsoup Crawler.
+    - Tuesday: HTTP Headers + CrawlerSerivce
     - Wednesday:
     - Thursday:
     - Friday:

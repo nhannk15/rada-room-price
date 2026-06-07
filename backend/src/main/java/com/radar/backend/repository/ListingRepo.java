@@ -1,5 +1,7 @@
 package com.radar.backend.repository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,7 +13,7 @@ import java.util.Optional;
 @Repository
 public interface ListingRepo extends JpaRepository<Listing, Long> {
     
-    List<Listing> findByDistrict(String district);
+    Page<Listing> findByDistrict(String district, Pageable pageable);
 
     Optional<Listing> findByUrl(String url);
 

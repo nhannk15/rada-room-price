@@ -17,8 +17,13 @@ Week 3:
     - Tuesday: HTTP Headers + CrawlerSerivce
     - Wednesday: Exception Handling + Retry Logic
     - Thursday: Controller for Crawler
-    - Friday: 
+    - Friday: Wiremock fake HTTP Testing
 Week 4:
+    - Monday: 
+    - Tuesday: 
+    - Wednesday: 
+    - Thursday: 
+    - Friday:
 Week 5:
 Week 6:
 Week 7:

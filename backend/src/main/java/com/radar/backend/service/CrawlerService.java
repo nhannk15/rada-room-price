@@ -93,6 +93,7 @@ public class CrawlerService {
     }
 
     public String extractText(Element parent, String selector) {
+        if (selector == null || selector.isBlank()) return "N/A";
         Element element = parent.selectFirst(selector);
         return element != null ? element.text() : "N/A";
     }

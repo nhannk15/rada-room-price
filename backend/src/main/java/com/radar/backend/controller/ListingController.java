@@ -10,13 +10,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.radar.backend.model.dto.CreateListingRequest;
 import com.radar.backend.model.dto.ListingDTO;
 import com.radar.backend.model.dto.PriceSnapshotDTO;
 import com.radar.backend.service.ListingService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("api/listings")
@@ -47,6 +52,12 @@ public class ListingController {
     public ResponseEntity<List<PriceSnapshotDTO>> getPriceHistory(@PathVariable Long id) {
         List<PriceSnapshotDTO> history = listingService.getPriceHistory(id);
         return ResponseEntity.status(HttpStatus.OK).body(history);
+    }
+
+    @PostMapping
+    public ResponseEntity<?> createListing(@RequestBody @Valid CreateListingRequest createListingRequest) {
+        ListingDTO response = listingService.createListing(createListingRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
 }

@@ -4,21 +4,18 @@ spring:
 
   datasource:
     url: jdbc:postgresql://localhost:5432/radar
-    username: radar_user
-    password: radar_pass
+    username: admin
+    password: 12345
     driver-class-name: org.postgresql.Driver
 
   # Hibernate is disabled because Flyway will manage schema.
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     show-sql: true
   
   # Flyway
   flyway:
-    enabled: true
+    enabled: false
     locations: classpath:db/migration
     
-
-
-

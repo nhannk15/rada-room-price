@@ -19,10 +19,10 @@ Week 3:
     - Thursday: Controller for Crawler
     - Friday: Wiremock fake HTTP Testing
 Week 4:
-    - Monday: 
-    - Tuesday: 
-    - Wednesday: 
-    - Thursday: 
+    - Monday: Spring Scheduler & REST APIs for Crawler (TEST)
+    - Tuesday: Logging with Simple Loggin Fascade For Java + Logback
+    - Wednesday: Controller Advice and Bean Validation
+    - Thursday: Transactional Annotation
     - Friday: 
 Week 5:
 Week 6:

@@ -1,0 +1,34 @@
+Week 1:
+    - Monday: Create GitHub repo radar-room-price.
+    - Tuesday: Write docker-compose.yaml (PostgreSQL + Mock Spring), run the first container.
+    - Wednesday: Create Spring Boot Project Backend with sufficient starter dependencies, run successfully.
+    - Thursday: Initial Frontend React + Vite, npm run dev smoothly.
+    - Friday: Create Database radar, test query successfully.
+
+Week 2:
+    - Monday: Get Started with Spring MVC.
+    - Tuesday: Spring Data JPA.
+    - Wednesday: Flyway Migration.
+    - Thursday: Spring Boot DevTools.
+    - Friday: JUnit 5 & Mockito.
+    
+Week 3:
+    - Monday: Basic Jsoup Crawler.
+    - Tuesday: HTTP Headers + CrawlerSerivce
+    - Wednesday: Exception Handling + Retry Logic
+    - Thursday: Controller for Crawler
+    - Friday: Wiremock fake HTTP Testing
+Week 4:
+    - Monday: Spring Scheduler & REST APIs for Crawler (TEST)
+    - Tuesday: Logging with Simple Loggin Fascade For Java + Logback
+    - Wednesday: Controller Advice and Bean Validation
+    - Thursday: Transactional Annotation
+    - Friday: 
+Week 5:
+Week 6:
+Week 7:
+Week 8:
+Week 9:
+Week 10:
+Week 11:
+Week 12:

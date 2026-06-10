@@ -38,4 +38,9 @@ public class ListingController {
         return ResponseEntity.ok(dto);
     }
 
+    @GetMapping("/{id}/price-snapshots")
+    public ResponseEntity<?> findByIdWithPriceSnapshots(@PathVariable Long id) {
+        return ResponseEntity.ok().body(listingService.findByIdWithPriceSnapshots(id));
+    }
+
 }

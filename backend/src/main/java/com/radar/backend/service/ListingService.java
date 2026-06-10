@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.radar.backend.model.dto.CreateListingRequest;
 import com.radar.backend.model.dto.ListingDTO;
+import com.radar.backend.model.dto.ListingPriceSnapshotDTO;
 import com.radar.backend.model.entity.Listing;
 import com.radar.backend.model.entity.PriceSnapshot;
 import com.radar.backend.model.mapper.ListingMapper;
@@ -41,7 +42,12 @@ public class ListingService {
     @Transactional(readOnly = true)
     public Page<ListingDTO> findAllListing(Pageable pageable) {
         Page<Listing> allListings = listingRepo.findAll(pageable);
-        return allListings.map(listingMapper::toListingDTO);
+        Page<ListingDTO> allListingDTOs = allListings.map((listing) -> {
+            ListingDTO listingDTO = listingMapper.toListingDTO(listing);
+            listingDTO.setLatestPrice(listing.getPriceSnapshots().get(0).getPrice());
+            return listingDTO;
+        });
+        return allListingDTOs;
     }
 
     @Transactional
@@ -85,6 +91,12 @@ public class ListingService {
         ListingDTO response = listingMapper.toListingDTO(savedListing);
         response.setLatestPrice(newPriceSnapshot.getPrice());
         return response;
+    }
+
+    @Transactional(readOnly = true)
+    public ListingPriceSnapshotDTO findByIdWithPriceSnapshots(Long id) {
+        Listing listing = listingRepo.findById(id).orElseThrow(() -> new RuntimeException("Listing not found"));
+        return listingMapper.toListingPriceSnapshotDTO(listing);
     }
 
 }

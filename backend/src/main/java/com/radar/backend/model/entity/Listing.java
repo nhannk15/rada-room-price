@@ -48,7 +48,7 @@ public class Listing {
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "listing", cascade = CascadeType.ALL)
-    private List<PriceSnapshot> priceSnapShot;
+    private List<PriceSnapshot> priceSnapshots;
 
     @PrePersist
     public void onCreate() {

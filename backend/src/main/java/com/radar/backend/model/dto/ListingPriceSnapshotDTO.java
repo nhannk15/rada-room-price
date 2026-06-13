@@ -20,6 +20,7 @@ public class ListingPriceSnapshotDTO {
     private BigDecimal area;
     private List<PriceSnapshotDTO> priceSnapshots;
     private String url;
+    private String imageUrl;
     private String district;
     private LocalDateTime createdAt;
 

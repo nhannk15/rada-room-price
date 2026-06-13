@@ -44,6 +44,7 @@ public class CrawlerConfig {
         private String price;
         private String area;
         private String district;
+        private String imageUrl;
         private String url;
     }
 

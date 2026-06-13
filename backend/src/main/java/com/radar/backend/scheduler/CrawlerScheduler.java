@@ -30,7 +30,7 @@ public class CrawlerScheduler {
         this.crawlerServices = crawlerServices;
     }
 
-    @Scheduled(cron = "*/45 * * * * *")
+    // @Scheduled(cron = "*/45 * * * * *")
     public void scheduledCrawl() {
         for (CrawlerService crawlerService : crawlerServices) {
             try {
@@ -43,6 +43,7 @@ public class CrawlerScheduler {
                             .district(crawledRoom.getDistrict())
                             .price(crawledRoom.getPrice())
                             .area(crawledRoom.getArea())
+                            .imageUrl(crawledRoom.getImageUrl())
                             .build();
 
                     listingService.createNewListing(request);

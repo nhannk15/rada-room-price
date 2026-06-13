@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.radar.backend.model.dto.CreateListingRequest;
 import com.radar.backend.model.dto.ListingDTO;
+import com.radar.backend.model.dto.ListingException;
 import com.radar.backend.model.dto.ListingPriceSnapshotDTO;
 import com.radar.backend.model.entity.Listing;
 import com.radar.backend.model.entity.PriceSnapshot;
@@ -37,7 +38,7 @@ public class ListingService {
     @Transactional(readOnly = true)
     public ListingDTO findById(Long id) {
         Listing listing = listingRepo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Listing not found by id: " + id));
+                .orElseThrow(() -> new ListingException("Listing not found by id: " + id));
         ListingDTO dto =  listingMapper.toListingDTO(listing);
         dto.setLatestPrice(listing.getPriceSnapshots().getLast().getPrice());
         return dto;
@@ -80,6 +81,7 @@ public class ListingService {
         Listing newListing = Listing
                 .builder()
                 .url(request.getUrl())
+                .imageUrl(request.getImageUrl())
                 .title(request.getTitle())
                 .district(request.getDistrict())
                 .area(request.getArea())

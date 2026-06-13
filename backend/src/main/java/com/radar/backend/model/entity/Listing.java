@@ -35,6 +35,9 @@ public class Listing {
     @Column(nullable = false, unique = true)
     private String url;
 
+    @Column(nullable = true, unique = true)
+    private String imageUrl;
+
     @Column(nullable = false)
     private String title;
 

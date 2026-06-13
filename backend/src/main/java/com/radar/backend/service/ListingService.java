@@ -23,20 +23,24 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ListingService {
 
-    @Autowired
-    private ListingRepo listingRepo;
+    private final ListingRepo listingRepo;
+    private final PriceSnapshotRepo priceSnapshotRepo;
+    private final ListingMapper listingMapper;
 
     @Autowired
-    private PriceSnapshotRepo priceSnapshotRepo;
-
-    @Autowired
-    private ListingMapper listingMapper;
+    public ListingService(ListingRepo listingRepo, PriceSnapshotRepo priceSnapshotRepo, ListingMapper listingMapper) {
+        this.listingRepo = listingRepo;
+        this.priceSnapshotRepo = priceSnapshotRepo;
+        this.listingMapper = listingMapper;
+    }
 
     @Transactional(readOnly = true)
     public ListingDTO findById(Long id) {
         Listing listing = listingRepo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Listing not found by id: " + id));
-        return listingMapper.toListingDTO(listing);
+        ListingDTO dto =  listingMapper.toListingDTO(listing);
+        dto.setLatestPrice(listing.getPriceSnapshots().getLast().getPrice());
+        return dto;
     }
 
     @Transactional(readOnly = true)
@@ -66,7 +70,7 @@ public class ListingService {
                         .listing(persistedListing)
                         .price(request.getPrice())
                         .build();
-                        priceSnapshotRepo.save(newPriceSnapshot);
+                priceSnapshotRepo.save(newPriceSnapshot);
             }
             ListingDTO response = listingMapper.toListingDTO(persistedListing);
             response.setLatestPrice(request.getPrice());

@@ -16,14 +16,18 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CrawlerScheduler {
 
-    @Autowired
-    private ListingService listingService;
+    private final ListingService listingService;
 
     /**
      * Strategy Pattern.
      */
+    private final List<CrawlerService> crawlerServices;
+
     @Autowired
-    private List<CrawlerService> crawlerServices;
+    public CrawlerScheduler(ListingService listingService, List<CrawlerService> crawlerServices) {
+        this.listingService = listingService;
+        this.crawlerServices = crawlerServices;
+    }
 
     // @Scheduled(cron = "*/45 * * * * *")
     public void scheduledCrawl() {

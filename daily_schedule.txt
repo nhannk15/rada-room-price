@@ -31,6 +31,11 @@ Week 5:
     - Thursday: Ghi notes endpoint & JSON
     - Friday: Zustand v5 + MUI.
 Week 6:
+    - Monday: Chart.js & ReactChartJS-2
+    - 
+    -
+    -
+    -
 Week 7:
 Week 8:
 Week 9:

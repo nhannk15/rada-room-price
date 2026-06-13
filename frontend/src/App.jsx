@@ -4,13 +4,14 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import ListingTable from './components/ListingTable'
+import AllRoutes from './components/AllRoutes'
 
 function App() {
     const [count, setCount] = useState(0)
 
     return (
         <>
-            <ListingTable />
+            <AllRoutes />
         </>
     )
 }

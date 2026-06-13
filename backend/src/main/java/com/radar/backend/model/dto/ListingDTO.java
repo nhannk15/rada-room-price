@@ -13,13 +13,14 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ListingDTO {
-    
+
     private Long id;
-    private String title;
-    private BigDecimal area;
-    private BigDecimal latestPrice;
     private String url;
+    private String imageUrl;
+    private String title;
     private String district;
+    private BigDecimal area;
     private LocalDateTime createdAt;
+    private BigDecimal latestPrice;
 
 }

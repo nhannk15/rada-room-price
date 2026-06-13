@@ -32,6 +32,7 @@ public class PhongTro123CrawlerService extends AbstractCrawlerService {
         String rawPrice = element.select(selectors.getPrice()).text();
         String rawArea = element.select(selectors.getArea()).text();
         String district = element.select(selectors.getDistrict()).text();
+        String imageUrl = element.select(selectors.getImageUrl()).attr("src");
         String url = element.select(selectors.getUrl()).attr("abs:href");
 
         BigDecimal price = parsePrice(rawPrice);
@@ -44,6 +45,7 @@ public class PhongTro123CrawlerService extends AbstractCrawlerService {
                 .area(area)
                 .district(district)
                 .url(url)
+                .imageUrl(imageUrl)
                 .build();
 
         return crawledRoom;

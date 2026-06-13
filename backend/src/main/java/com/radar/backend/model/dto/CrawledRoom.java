@@ -19,6 +19,7 @@ public class CrawledRoom {
     private BigDecimal price;
     private BigDecimal area;
     private String district;
+    private String imageUrl;
     private String url;
 
 }

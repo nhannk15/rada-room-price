@@ -21,6 +21,8 @@ public class CreateListingRequest {
     @NotBlank(message = "URL không được để trống")
     private String url;
 
+    private String imageUrl;
+
     @NotBlank(message = "Tiêu đề không được để trống")
     @Size(min = 0, max = 255, message = "Tiêu đề phải từ 0 - 255 kí tự")
     private String title;

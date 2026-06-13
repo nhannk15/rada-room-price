@@ -36,12 +36,12 @@ public abstract class AbstractCrawlerService implements CrawlerService {
                 String pageUrl = siteConfig.getBasedUrl() + "?page=" + page;
                 try {
                     Document document = Jsoup.connect(pageUrl)
-                    .userAgent(settings.getUserAgent())
-                    .timeout(settings.getTimeOutMs())
-                    .get();
+                            .userAgent(settings.getUserAgent())
+                            .timeout(settings.getTimeOutMs())
+                            .get();
                     log.info("Fetching page {}: {}", page, document.title());
 
-                    for (Element element: document.select(selectors.getContainer())) {
+                    for (Element element : document.select(selectors.getContainer())) {
                         try {
                             CrawledRoom crawledRoom = parseElement(element, selectors);
                             if (crawledRoom != null) {

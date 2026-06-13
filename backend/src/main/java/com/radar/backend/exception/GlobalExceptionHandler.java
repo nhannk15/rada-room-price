@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
+import com.radar.backend.model.dto.ListingException;
+
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -26,7 +28,13 @@ public class GlobalExceptionHandler {
 
         body.put("errors", errors);
         return ResponseEntity.badRequest().body(body);
-        
+
+    }
+
+    @ExceptionHandler(ListingException.class)
+    public ResponseEntity<ErrorResponse> handleListingNotFound(ListingException ex, WebRequest request) {
+        ErrorResponse errror = new ErrorResponse(HttpStatus.BAD_REQUEST.value(), ex.getMessage(), request.getDescription(false));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errror);
     }
 
 }

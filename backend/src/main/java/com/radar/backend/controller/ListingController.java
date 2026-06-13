@@ -19,8 +19,12 @@ import com.radar.backend.service.ListingService;
 @RequestMapping("api/listings")
 public class ListingController {
 
+    private final ListingService listingService;
+
     @Autowired
-    private ListingService listingService;
+    public ListingController(ListingService listingService) {
+        this.listingService = listingService;
+    }
     
     @GetMapping
     public ResponseEntity<Page<ListingDTO>> getAllListing(

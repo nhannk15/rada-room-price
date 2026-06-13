@@ -19,7 +19,6 @@ public class SecurityConfig {
     SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .csrf((csrf) -> csrf.disable())
-                .cors((cors) -> cors.disable())
                 .cors((cors) -> cors.configurationSource(configurationSource));
         return httpSecurity.build();
     }

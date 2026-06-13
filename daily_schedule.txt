@@ -25,6 +25,11 @@ Week 4:
     - Thursday: Transactional Annotation
     - Friday: 
 Week 5:
+    - Monday: Axios docs
+    - Tuesday: ListingTable component (fetch + render)
+    - Wednesday: CORS check
+    - Thursday: Ghi notes endpoint & JSON
+    - Friday: Zustand v5 + MUI.
 Week 6:
 Week 7:
 Week 8:

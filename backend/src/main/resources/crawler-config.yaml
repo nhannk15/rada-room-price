@@ -1,6 +1,6 @@
 sites:
   - name: "phongtro123"
-    baseUrl: "https://phongtro123.com/tinh-thanh/ho-chi-minh"
+    basedUrl: "https://phongtro123.com/tinh-thanh/ho-chi-minh"
     enabled: true
     selectors:
       container: "ul.post__listing > li"
@@ -11,10 +11,10 @@ sites:
       url: "h3 > a"
   
   - name: "tromoi.com"
-    baseUrl: "https://tromoi.com/tim-tro-tai-thanh-pho-ho-chi-minh"
+    basedUrl: "https://tromoi.com/tim-tro-tai-thanh-pho-ho-chi-minh"
     enabled: false
     selectors:
-      containers: "div.row.gap-y-20 > div"
+      container: "div.row.gap-y-20 > div"
       title: "div.hostel-item__title > a > h3"
       price: "div.hostel-item__price--wrap > span"
       area: ""
@@ -26,3 +26,5 @@ settings:
   timeOutMs: 10000
   retryMax: 3
   retryDelayMs: 2000
+  minPage: 0
+  maxPage: 10

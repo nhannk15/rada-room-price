@@ -3,6 +3,7 @@ package com.radar.backend.scheduler;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.radar.backend.model.dto.CrawledRoom;
@@ -29,20 +30,20 @@ public class CrawlerScheduler {
         this.crawlerServices = crawlerServices;
     }
 
-    // @Scheduled(cron = "*/45 * * * * *")
+    @Scheduled(cron = "*/45 * * * * *")
     public void scheduledCrawl() {
-        for (CrawlerService crawlerService: crawlerServices) {
+        for (CrawlerService crawlerService : crawlerServices) {
             try {
                 List<CrawledRoom> crawledRooms = crawlerService.crawl();
-                for (CrawledRoom crawledRoom: crawledRooms) {
+                for (CrawledRoom crawledRoom : crawledRooms) {
                     CreateListingRequest request = CreateListingRequest
-                    .builder()
-                    .url(crawledRoom.getUrl())
-                    .title(crawledRoom.getTitle())
-                    .district(crawledRoom.getDistrict())
-                    .price(crawledRoom.getPrice())
-                    .area(crawledRoom.getArea())
-                    .build();
+                            .builder()
+                            .url(crawledRoom.getUrl())
+                            .title(crawledRoom.getTitle())
+                            .district(crawledRoom.getDistrict())
+                            .price(crawledRoom.getPrice())
+                            .area(crawledRoom.getArea())
+                            .build();
 
                     listingService.createNewListing(request);
                 }
